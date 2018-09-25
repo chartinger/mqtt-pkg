@@ -43,8 +43,10 @@ program
     const retain = !!cmd.retain
     console.log('Publishing "' + message + '" to topic "' + topic + '" on host "' + host + '" | retain: ' + retain)
     const client = MQTT.connect(host)
-    client.publish(topic, message, { retain: retain }, function(error) { console.log(error)} )
-    client.end()
+    client.on('connect', () => {
+      client.publish(topic, message, { retain: retain }, function(error) { console.log(error)} )
+      client.end()
+    })
   });
 
 program
