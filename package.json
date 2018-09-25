@@ -1,0 +1,21 @@
+{
+  "name": "mqtt-pkg",
+  "version": "0.0.1",
+  "description": "A single-file wrapper binary around Mosca MQTT Server and MQTT.js client for educational purposes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "pkg": "pkg index.js --targets node10-win-x64 -d --output dist/mqtt.exe"
+  },
+  "author": "Christian Hartinger",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.18.0",
+    "mosca": "github:chartinger/mosca",
+    "mqtt": "^2.18.8"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "pkg": "^4.3.4"
+  }
+}
